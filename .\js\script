@@ -11,8 +11,28 @@ setTimeout(() {
 
 const loop = setInterval(()={
 
+console.log('loop')
+
 const pipePosition = pipe.offsetLeft;
-console.log(pipePosition)
+const marioPosition = +window.getCmoputedStyle(mario).bottom.replace('px')
+
+console.log(marioPosition);
+
+if (PipePosition < 120 && PipePosition > 0 && marioPosition < 80) {
+
+pipe.style.aniamtion = 'none';
+pipe.style.left = '${pipePosition}px';
+
+pipe.style.aniamtion = 'none';
+pipe.style.bottom = '${pipePosition}px';
+
+mario.src = ./imagens/game-over.png';
+mario.style.width = '75px'
+mario.style.marginLeft = '50px'
+
+clearInterval(loop)
+}
+
 }, 10);
 
 document.addEventListener('keydown' ,jump);

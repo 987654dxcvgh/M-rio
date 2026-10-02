@@ -26,7 +26,7 @@ pipe.style.left = '${pipePosition}px';
 pipe.style.aniamtion = 'none';
 pipe.style.bottom = '${pipePosition}px';
 
-mario.src = ./imagens/game-over.png';
+mario.src = /img/game-over.png ;
 mario.style.width = '75px'
 mario.style.marginLeft = '50px'
 

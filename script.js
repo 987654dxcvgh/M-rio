@@ -19,10 +19,10 @@ const marioPosition = Number(
 
 if (PipePosition <= 120 && PipePosition > 0 && marioPosition < 80) {
 pipe.style.aniamtion = 'none';
-pipe.style.left = '${pipePosition}px';
+pipe.style.left = `${pipePosition}px`;
 
 pipe.style.animation = 'none';
-pipe.style.bottom = '${marioPosition}px';
+pipe.style.bottom = `${marioPosition}px`;
 
 mario.src = './imagens/game-over.png';
 mario.style.width = '75px';

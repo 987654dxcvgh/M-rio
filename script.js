@@ -1,39 +1,33 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 
-const jump = () {
+function jump() {
 mario.classlist.add('jump');
 
-setTimeout(() { 
+setTimeout(() => { 
      mario.classlist.remove('jump');
  }, 500);
 }
 
-const loop = setInterval(()={
+document.addEventListener('keydown', jump);
 
-console.log('loop')
-
+const loop = setInterval( () => {
 const pipePosition = pipe.offsetLeft;
-const marioPosition = +window.getCmoputedStyle(mario).bottom.replace('px')
+const marioPosition = Number(
+ window.getComputedStyle(mario).bottom.replace('px', '')
+ );
 
-console.log(marioPosition);
-
-if (PipePosition < 120 && PipePosition > 0 && marioPosition < 80) {
-
+if (PipePosition <= 120 && PipePosition > 0 && marioPosition < 80) {
 pipe.style.aniamtion = 'none';
 pipe.style.left = '${pipePosition}px';
 
-pipe.style.aniamtion = 'none';
-pipe.style.bottom = '${pipePosition}px';
+pipe.style.animation = 'none';
+pipe.style.bottom = '${marioPosition}px';
 
-mario.src = /img/game-over.png ;
-mario.style.width = '75px'
-mario.style.marginLeft = '50px'
+mario.src = './imagens/game-over.png';
+mario.style.width = '75px';
 
 clearInterval(loop);
-}
-
+ }
 }, 10);
-
-document.addEventListener('keydown' ,jump);
 
